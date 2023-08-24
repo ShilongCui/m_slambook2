@@ -46,6 +46,8 @@ int main(int argc, char **argv){
      *                                              p2 = T2 * pw
      * 联立可以得到如下计算公式： p2 = T2 * T1^{-1} * p1
     **********************************************************************/
+    // 欧式变换也称为等距变换(Isometry Transform)
+    // 所以欧式变换矩阵使用 Isometry
     Isometry3d T1w(q1), T2w(q2);
     T1w.pretranslate(t1);
     T2w.pretranslate(t2);

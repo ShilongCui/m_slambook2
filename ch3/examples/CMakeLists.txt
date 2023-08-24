@@ -7,10 +7,17 @@ set( CMAKE_BUILD_TYPE "Debug")
 # 声明一个cmake工程
 project(coordinateTransform)
 
+# 添加头文件
+include_directories( "/usr/include/eigen3" )
+
 # 添加一个可执行程序
 # 语法 add_executable( 程序名 源代码文件 )
 add_executable( coordinateTransform coordinateTransform.cpp )
 
-# 添加头文件
-include_directories( "/usr/include/eigen3" )
+#添加Pangolin
+find_package(Pangolin REQUIRED)
+include_directories(${Pangolin_INCLUDE_DIRS})
 
+add_executable(plotTrajectory plotTrajectory.cpp)
+
+target_link_libraries(plotTrajectory ${Pangolin_LIBRARIES})
