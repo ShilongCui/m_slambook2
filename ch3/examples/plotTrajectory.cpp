@@ -72,16 +72,17 @@ void DrawTrajectory(vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>> pos
         glLineWidth(2);
         for(size_t i = 0; i < poses.size(); i++)
         {
-            //画每个位姿的三个坐标轴
-            //取出平移向量
+            // 画每个位姿的三个坐标轴
+            // 取出平移向量
             Vector3d Ow=poses[i].translation();
-            // 画出X轴，0.1是缩小0.1倍。这个地方有点小难理解，最好写程序测试一下，此处是旋转矩阵T*(1,0,0),
+            // 取出X轴，0.1是缩小0.1倍。这个地方有点小难理解，最好写程序测试一下，此处是旋转矩阵T*(1,0,0),
             // 结果是旋转后的X轴位置.
             Vector3d Xw=poses[i]*(0.1*Vector3d(1,0,0));
-            //画出Y轴
+            // 取出Y轴
             Vector3d Yw=poses[i]*(0.1*Vector3d(0,1,0));
-            //画出Z轴
+            // 取出Z轴
             Vector3d Zw=poses[i]*(0.1*Vector3d(0,0,1));
+
             //开始画线,GL_LINES：线,GL_POINTS：点
             glBegin(GL_LINES);
             //绘制线的颜色
