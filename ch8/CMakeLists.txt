@@ -21,5 +21,5 @@ include_directories(
 add_executable(optical_flow optical_flow.cpp)
 target_link_libraries(optical_flow ${OpenCV_LIBS})
 
-# add_executable(direct_method direct_method.cpp)
-# target_link_libraries(direct_method ${OpenCV_LIBS} ${Pangolin_LIBRARIES})
+add_executable(direct_method direct_method.cpp)
+target_link_libraries(direct_method ${OpenCV_LIBS} ${Pangolin_LIBRARIES})

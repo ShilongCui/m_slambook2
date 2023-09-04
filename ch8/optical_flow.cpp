@@ -330,7 +330,8 @@ void OpticalFlowMultiLevel(
         kp1_pyr.push_back(kp_top);
         kp2_pyr.push_back(kp_top);
     }
-
+    // 分别使用 1.0, 0.5, 0.25, 0.125 尺度的图片进行优化，总共优化 4 次，得到的 pose 更精确。
+    // 而单层的话 只在原始图片上优化一次，pose 噪声较大。
     for (int level = pyramids - 1; level >= 0; level--) {
         // from coarse to fine
         success.clear();
