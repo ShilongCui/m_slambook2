@@ -42,7 +42,7 @@ BALProblem::BALProblem(const std::string &filename, bool use_quaternions) {
 
     // This wil die horribly on invalid files. Them's the breaks.
     /*
-    * <num_cameras> <num_points> <num_observations>
+    * <num_cameras> <num_points> <num_observations> 16，22106，83718
     * <camera_index_1> <point_index_1> <x_1> <y_1>
     */
     FscanfOrDie(fptr, "%d", &num_cameras_);
